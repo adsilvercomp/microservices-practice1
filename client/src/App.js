@@ -1,16 +1,17 @@
-import React from "react";
-import PostCreate from "./PostCreate";
-import PostList from "./PostList";
+import React from 'react';
+import PostCreate from "./components/PostCreate/PostCreate";
+import PostList from './components/PostList/PostList';
 
 const App = () => {
-  return (
-    <div className="container">
-      <h1>Create Post</h1>
-      <PostCreate />
-      <hr />
-      <h1>Posts</h1>
-      <PostList />
-    </div>
-  );
-};
-export default App;
+    return (
+        <section className="container">
+            <h2>Create Post</h2>
+            <PostCreate/>
+            <hr/>
+            <h2>Posts</h2>
+            <PostList/> 
+        </section>
+    )
+}
+
+export default App; 

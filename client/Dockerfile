@@ -1,10 +1,21 @@
-FROM node:16-alpine
+# specify base image
+FROM node:alpine
 
+# environmental variables
 ENV CI=true
+ENV WDS_SOCKET_PORT=0
 
+# set the working directory to /app in the container. All of the commands will be issued relative to this directory
 WORKDIR /app
-COPY package.json ./
-RUN npm install
+
+# copy over only the package.json file
+COPY ./package.json ./
+
+# install all dependencies
+RUN npm install 
+
+# copy over all of your remaining source code
 COPY ./ ./
 
+# set the command to run when the container starts up
 CMD ["npm", "start"]
